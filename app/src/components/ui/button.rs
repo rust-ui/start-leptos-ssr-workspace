@@ -64,10 +64,7 @@ pub struct ButtonClass {
 
 #[derive(TwVariant)]
 pub enum ButtonVariant {
-    #[tw(
-        default,
-        class = "bg-primary text-primary-foreground hover:bg-primary/90"
-    )]
+    #[tw(default, class = "bg-primary text-primary-foreground hover:bg-primary/90")]
     Default,
     #[tw(class = "bg-secondary text-secondary-foreground hover:bg-secondary/80")]
     Secondary,

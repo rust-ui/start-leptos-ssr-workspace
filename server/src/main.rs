@@ -1,11 +1,11 @@
 #![recursion_limit = "256"]
 
+use app::app::App;
+use app::shell::shell;
 use axum::Router;
 use leptos::logging::log;
 use leptos::prelude::*;
 use leptos_axum::{generate_route_list, LeptosRoutes};
-
-use app::{app::App, shell::shell};
 
 #[tokio::main]
 async fn main() {
@@ -27,7 +27,5 @@ async fn main() {
     // `axum::Server` is a re-export of `hyper::Server`
     log!("listening on http://{}", &addr);
     let listener = tokio::net::TcpListener::bind(&addr).await.unwrap();
-    axum::serve(listener, app.into_make_service())
-        .await
-        .unwrap();
+    axum::serve(listener, app.into_make_service()).await.unwrap();
 }
